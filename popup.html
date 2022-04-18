@@ -2,9 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   </head>
   <body>
-    <button id="changeColor"></button>
+    <div id="wrapper">
+      <section id="currentTrackers">
+        <h1>Current page trackers</h1>
+        <ul>
+          <li><img src="images/Twitter.png"><span>Twitter</span></li>
+          <li><img src="images/Facebook.png"><span>Facebook</span></li>
+        </ul>
+      </section>
+      <section id="history">
+        <h1>History per tracker</h1>
+        <span class="material-icons arrowDownUp">arrow_drop_down</span>
+        <section class="hidden">
+          <ul>
+            <li><a href="history.html"><img src="images/Twitter.png" title="Twitter"></a></li>
+            <li><a href="history.html"><img src="images/Facebook.png" title="Facebook"></a></li>
+            <li><a href="history.html"><img src="images/Facebook.png" title="Facebook"></a></li>
+            <li><a href="history.html"><img src="images/Facebook.png" title="Facebook"></a></li>
+            <li><a href="history.html"><img src="images/Facebook.png" title="Facebook"></a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+    <script src="js/popup.js"></script>
     <script src="js/currentPageTrackers.js"></script>
+    <script src="js/historyPerTracker.js"></script>
   </body>
 </html>

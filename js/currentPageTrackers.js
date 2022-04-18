@@ -23,8 +23,8 @@
 //   });
 // }
 
-let changeColor = document.getElementById("changeColor");
+// let changeColor = document.getElementById("wrapper");
 
-chrome.storage.sync.get("text", ({ text }) => {
-  changeColor.innerHTML = text;
-});
+// chrome.storage.sync.get("text", ({ text }) => {
+//   changeColor.innerHTML = text;
+// });

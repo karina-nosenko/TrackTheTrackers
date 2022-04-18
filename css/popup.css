@@ -1,13 +1,106 @@
-button {
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;500&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  display: relative;
+}
+
+#wrapper {
   height: auto;
-  width: auto;
-  outline: none;
+  width: 160px;
   margin: 10px;
-  border: none;
   border-radius: 2px;
 }
 
-button.current {
+#wrapper.current {
   box-shadow: 0 0 0 2px white,
               0 0 0 4px black;
+}
+
+h1 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 img {
+  margin-right: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+li img {
+  margin: 8px 8px;
+}
+
+li span {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.arrowDownUp {
+  color: #939393;
+  text-align: center;
+  width: 100%;
+}
+
+.arrowDownUp:hover {
+  color: #727171;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#history ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#history ul li {
+  position: relative;
+}
+
+#history ul li:hover {
+  cursor: pointer;
+}
+
+#history ul li span {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #727171;
+}
+
+#history ul li span:current {
+  box-shadow: 0 0 0 2px white,
+              0 0 0 4px black;
+}
+
+.closeIcon {
+  display: absolute;
+  top: 3px;
+  right: 3px;
+  color: #000;
+}
+
+#linksList li a {
+  font-size: 12px;
+  margin: 10px 0 10px 0;
 }
