@@ -54,15 +54,17 @@ function getHostName(){
     return window.location.hostname;
 }
 function listTrackers(hostName){
+
     let changeColor = document.getElementById("trackers");
-    chrom.storage.sync.get(data=>{
+    chrome.storage.sync.get(data=>{
+        // alert(data);
         if(data.Facebook.includes(hostName)){
             changeColor.innerHTML += "Facebook";
         }
         if(data.Twitter.includes(hostName)){
             changeColor.innerHTML += "Twitter";
         }
-        if(data.OutBrains.includes(hostName)){
+        if(data.Outbrains.includes(hostName)){
             changeColor.innerHTML += "OutBrains";
         }
         if(data.Google.includes(hostName)){
@@ -71,17 +73,36 @@ function listTrackers(hostName){
     })
 }
 //hostname
-window.onload = ()=>{
-    chrom.tabs.query({currentWindow:true,active:true},(tabs)=>{
-        chrom.scrtipting.executeScript({
-            target:{tabId:tabs[0].id},
+window.addEventListener("load",()=>{
+    chrome.tabs.query({currentWindow:true,active:true},([tab])=>{
+        chrome.scripting.executeScript({
+            target:{tabId:tab.id},
             function:getHostName
         },(frames)=>{
+            // alert("lll");
             frames.forEach(frame => {
+                // alert("bbb");
                if(frame.result){
+                // alert(frame.result);
                 listTrackers(frame.result);
+                
                }
             });
         })
     })
-}
+})
+// window.onload = ()=>{
+//     chrome.tabs.query({currentWindow:true,active:true},(tabs)=>{
+//         chrome.scrtipting.executeScript({
+//             target:{tabId:tabs[0].id},
+//             function:getHostName
+//         },(frames)=>{
+//             frames.forEach(frame => {
+//                if(frame.result){
+//                 listTrackers(frame.result);
+//                 alert("aaa");
+//                }
+//             });
+//         })
+//     })
+// }
