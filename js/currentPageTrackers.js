@@ -28,8 +28,8 @@ const findCurrentTrackers = (hostName) => {
         if(data.Outbrain.includes(hostName)) {
             displayCurrentTracker('Outbrain');
         }
-        if(data.Google.includes(hostName)) {
-            displayCurrentTracker('Google');
+        if(data.Adobe.includes(hostName)) {
+            displayCurrentTracker('Adobe');
         }
 
         if(!trackersFound) {

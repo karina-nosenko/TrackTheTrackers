@@ -15,13 +15,13 @@ const showTrackerHistory = (tracker) => {
     });
 }
 
-const google = document.getElementById('GoogleHistory');
+const adobe = document.getElementById('AdobeHistory');
 const facebook = document.getElementById('FacebookHistory');
 const twitter = document.getElementById('TwitterHistory');
 const outbrain = document.getElementById('OutbrainHistory');
 
-if(google) {
-    showTrackerHistory('Google');
+if(adobe) {
+    showTrackerHistory('Adobe');
 }
 if(facebook) {
     showTrackerHistory('Facebook');
