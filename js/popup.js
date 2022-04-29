@@ -1,9 +1,9 @@
 const expandArrow = document.getElementsByClassName('arrowDownUp')[0];
+const trackersList = document.getElementsByClassName('hidden')[0];
+trackersList.style.display = "none";
 
-const toggleTrackersListSection = () => {
-    const trackersList = document.getElementsByClassName('hidden')[0];
-    
-    if(trackersList.style.display === "none") {
+const toggleTrackersListSection = () => {  
+    if(trackersList.style.display === "none" || trackersList.style === "display: none;") {
         trackersList.style.display = "block";
         expandArrow.innerHTML = "arrow_drop_up";
     } else {
