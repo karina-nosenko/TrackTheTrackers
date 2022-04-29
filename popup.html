@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="css/popup.css">
   </head>
   <body>
     <div id="wrapper">
       <section id="currentTrackers">
         <h1>Current page trackers</h1>
-        <div id="trackers">
-          <!-- <div id="googlea"></div> -->
-        </div>
+        <div id="trackers"></div>
         <ul>
           <li><img src="images/Twitter.png"><span>Twitter</span></li>
           <li><img src="images/Facebook.png"><span>Facebook</span></li>
@@ -31,10 +29,9 @@
           </ul>
         </section>
       </section>
-    </div>
-    <script src="js/content-script.js"></script>  
-    <script src="js/popup.js"></script>
+    </div> 
     <script src="js/currentPageTrackers.js"></script>
     <script src="js/historyPerTracker.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>
