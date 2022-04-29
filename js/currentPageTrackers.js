@@ -8,7 +8,7 @@ const displayCurrentTracker = (tracker) => {
     const trackersList = document.getElementById('trackersList');
 
     if(!tracker) {
-        trackersList.innerHTML = '<li>No Trackers Found.</li>';
+        trackersList.innerHTML = '<center>No Trackers Found.</center>';
         return;
     }
 
