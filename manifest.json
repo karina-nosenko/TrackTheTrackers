@@ -1,6 +1,6 @@
 {
   "name": "Track The Trackers",
-  "description": "See the trackers on the current web page, and the history of visited sites per tracker.",
+  "description": "View the trackers on the current web page and the history of visited sites per tracker.",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
