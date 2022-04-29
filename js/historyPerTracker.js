@@ -1,30 +1,34 @@
-const getTrackerHistory = (tracker) => {
-    chrome.storage.sync.get(data => {
-        if(tracker == "Twitter") {
-            return data.Twitter;
-        }
-        if(tracker == "Facebook") {
-            return data.Facebook;
-        }
-        if(tracker == "Google") {
-            return data.Google;
-        }
-        if(tracker == "Outbrain") {
-            return data.Outbrain;
-        }
-    })
-};
-
 const showTrackerHistory = (tracker) => {
     const linksListElement = document.getElementById(tracker+'History');
-    const linksList = getTrackerHistory(tracker);
 
-    if(linksList.length === 0) {
-        linksListElement.innerHTML = `<center>No history for the ${ tracker } tracker was found.</center>`;
-        return;
-    }
+    chrome.storage.sync.get(data => {
+        const linksList = data[tracker];
 
-    linksList.foreach(link => {
-        linksListElement.innerHTML += `<li><a href="${ link }">${ link }</a></li>`;
-    });   
+        if(linksList && linksList.length === 0) {
+            linksListElement.innerHTML = `<center>No History Found.</center>`;
+            return;
+        }
+
+        Array.from(linksList).forEach(link => {
+            linksListElement.innerHTML += `<li><a href="${ link }">${ link }</a></li>`;
+        });
+    });
+}
+
+const google = document.getElementById('GoogleHistory');
+const facebook = document.getElementById('FacebookHistory');
+const twitter = document.getElementById('TwitterHistory');
+const outbrain = document.getElementById('OutbrainHistory');
+
+if(google) {
+    showTrackerHistory('Google');
+}
+if(facebook) {
+    showTrackerHistory('Facebook');
+}
+if(twitter) {
+    showTrackerHistory('Twitter');
+}
+if (outbrain) {
+    showTrackerHistory('Outbrain');
 }
