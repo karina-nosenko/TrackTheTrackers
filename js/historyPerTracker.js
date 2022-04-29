@@ -1,4 +1,4 @@
-const getHistoryOfTracker = (tracker) => {
+const getTrackerHistory = (tracker) => {
     chrome.storage.sync.get(data => {
         if(tracker == "Twitter") {
             return data.Twitter;
@@ -15,4 +15,16 @@ const getHistoryOfTracker = (tracker) => {
     })
 };
 
-// TODO: display history for each tracker
+const showTrackerHistory = (tracker) => {
+    const linksListElement = document.getElementById(tracker+'History');
+    const linksList = getTrackerHistory(tracker);
+
+    if(linksList.length === 0) {
+        linksListElement.innerHTML = `<center>No history for the ${ tracker } tracker was found.</center>`;
+        return;
+    }
+
+    linksList.foreach(link => {
+        linksListElement.innerHTML += `<li><a href="${ link }">${ link }</a></li>`;
+    });   
+}

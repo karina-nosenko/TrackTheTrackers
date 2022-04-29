@@ -1,6 +1,8 @@
 const expandArrow = document.getElementsByClassName('arrowDownUp')[0];
 const trackersList = document.getElementsByClassName('hidden')[0];
-trackersList.style.display = "none";
+if(trackersList && trackersList.style) {
+    trackersList.style.display = "none";
+}
 
 const toggleTrackersListSection = () => {  
     if(trackersList.style.display === "none") {
