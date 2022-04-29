@@ -10,7 +10,7 @@ const getHistoryOfTracker = (tracker) => {
             return data.Google;
         }
         if(tracker == "Outbrain") {
-            return data.Outbrains;
+            return data.Outbrain;
         }
     })
 };

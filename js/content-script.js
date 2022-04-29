@@ -18,7 +18,7 @@ const scanPageForTrackers = () => {
         addTrackerToStorage("Facebook");
     }
     if (serializedDOM.search('obApi') > -1) {
-        addTrackerToStorage("Outbrains");
+        addTrackerToStorage("Outbrain");
     }
     if (serializedDOM.search('gtag') > -1) {
         addTrackerToStorage("Google");

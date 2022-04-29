@@ -22,8 +22,8 @@ const findCurrentTrackers = (hostName) => {
         if(data.Twitter.includes(hostName)) {
             displayCurrentTracker('Twitter');
         }
-        if(data.Outbrains.includes(hostName)) {
-            displayCurrentTracker('Outbrains');
+        if(data.Outbrain.includes(hostName)) {
+            displayCurrentTracker('Outbrain');
         }
         if(data.Google.includes(hostName)) {
             displayCurrentTracker('Google');
