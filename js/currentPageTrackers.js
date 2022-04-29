@@ -5,13 +5,16 @@ const getHostName = () => {
 }
 
 const displayCurrentTracker = (tracker) => {
+    const trackersList = document.getElementById('trackersList');
+
     if(!tracker) {
-        // TODO: display empty list message
+        trackersList.innerHTML = '<li>No Trackers Found.</li>';
         return;
     }
-    trackersFound = true;
 
-    // TODO: display the tracker
+    trackersFound = true;
+    const trackerElement = `<li><img src="images/${ tracker }.png"><span>${ tracker }</span></li>`
+    trackersList.innerHTML += trackerElement;
 }
 
 const findCurrentTrackers = (hostName) => {
