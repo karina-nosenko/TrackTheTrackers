@@ -59,16 +59,32 @@ function listTrackers(hostName){
     chrome.storage.sync.get(data=>{
         // alert(data);
         if(data.Facebook.includes(hostName)){
-            changeColor.innerHTML += "Facebook";
+            changeColor.innerHTML += " Facebook";
         }
         if(data.Twitter.includes(hostName)){
-            changeColor.innerHTML += "Twitter";
+            changeColor.innerHTML += " Twitter";
         }
         if(data.Outbrains.includes(hostName)){
-            changeColor.innerHTML += "OutBrains";
+            changeColor.innerHTML += " OutBrains";
         }
         if(data.Google.includes(hostName)){
-            changeColor.innerHTML += "Google";
+            changeColor.innerHTML += " Google";
+        }
+    })
+}
+function getTrackerList(string){
+    chrome.storage.sync.get(data=>{
+        if(string=="Twitter"){
+            return data.Twitter;
+        }
+        if(string=="Facebook"){
+            return data.Facebook;
+        }
+        if(string=="Google"){
+            return data.Google;
+        }
+        if(string=="Outbrain"){
+            return data.Outbrains;
         }
     })
 }
