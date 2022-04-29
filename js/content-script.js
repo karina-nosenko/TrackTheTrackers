@@ -1,4 +1,4 @@
-const addDomainToStorageOfTracker = (tracker) => {
+const addTrackerToStorage = (tracker) => {
 chrome.storage.sync.get(data => {
         if (!data[tracker].includes(window.location.hostname)) {
             data[tracker].push(window.location.hostname);
@@ -12,19 +12,19 @@ const scanPageForTrackers = () => {
     var serializedDOM = serializer.serializeToString(document.body);
 
     if (serializedDOM.search('twq') > -1) {
-        addDomainToStorageOfTracker("Twitter");
+        addTrackerToStorage("Twitter");
     }
     if (serializedDOM.search('fbq') > -1) {
-        addDomainToStorageOfTracker("Facebook");
+        addTrackerToStorage("Facebook");
     }
     if (serializedDOM.search('obApi') > -1) {
-        addDomainToStorageOfTracker("Outbrains");
+        addTrackerToStorage("Outbrains");
     }
     if (serializedDOM.search('gtag') > -1) {
-        addDomainToStorageOfTracker("Google");
+        addTrackerToStorage("Google");
     }
     if (serializedDOM.search('qpl') > -1) {
-        addDomainToStorageOfTracker("Google");
+        addTrackerToStorage("Google");
     }
 }
 
