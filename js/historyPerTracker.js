@@ -19,6 +19,7 @@ const adobe = document.getElementById('AdobeHistory');
 const facebook = document.getElementById('FacebookHistory');
 const twitter = document.getElementById('TwitterHistory');
 const outbrain = document.getElementById('OutbrainHistory');
+const microsoft = document.getElementById('MicrosoftHistory');
 
 if(adobe) {
     showTrackerHistory('Adobe');
@@ -31,4 +32,7 @@ if(twitter) {
 }
 if (outbrain) {
     showTrackerHistory('Outbrain');
+}
+if (microsoft) {
+    showTrackerHistory('Microsoft');
 }

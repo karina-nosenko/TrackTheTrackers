@@ -23,6 +23,9 @@ const scanPageForTrackers = () => {
     if (serializedDOM.search('adobedtm.com') > -1) {
         addTrackerToStorage("Adobe");
     }
+    if (serializedDOM.search('bat.bing.com') > -1) {
+        addTrackerToStorage("Microsoft");
+    }
 }
 
 scanPageForTrackers();

@@ -31,6 +31,9 @@ const findCurrentTrackers = (hostName) => {
         if(data.Adobe.includes(hostName)) {
             displayCurrentTracker('Adobe');
         }
+        if(data.Microsoft.includes(hostName)) {
+            displayCurrentTracker('Microsoft');
+        }
 
         if(!trackersFound) {
             displayCurrentTracker();    // Empty list message will be displayed
